@@ -1,0 +1,5 @@
+{
+  "name": "@pattern-compare/core-type-tests",
+  "private": true,
+  "types": "../dist/core-public.d.ts"
+}

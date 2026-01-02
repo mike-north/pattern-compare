@@ -1,0 +1,14 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "composite": false,
+    "incremental": false,
+    "baseUrl": ".",
+    "paths": {
+      "@dist/*": ["../dist/*"]
+    }
+  },
+  "include": ["./**/*.test-d.ts"],
+  "exclude": []
+}

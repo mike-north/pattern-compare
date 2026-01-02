@@ -1,0 +1,48 @@
+{
+  "name": "@pattern-compare/core",
+  "description": "Core pattern comparison library",
+  "version": "0.0.0",
+  "author": "Mike North <michael.north@gmail.com>",
+  "devDependencies": {
+    "eslint": "^9.39.2",
+    "tsd": "~0.33.0",
+    "typescript": "5.8.2",
+    "vitest": "^1.0.4"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/core-public.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mike-north/pattern-compare.git",
+    "directory": "packages/core"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "build:tsc": "tsc -b",
+    "check": "pnpm check:lint-ts && pnpm check:typecheck && pnpm check:api-report",
+    "check:api-report": "api-extractor run",
+    "check:lint-ts": "eslint .",
+    "check:typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist tmp/**/*api.{json,md} && rm -f *.tsbuildinfo tsconfig.tsbuildinfo",
+    "generate:api-report": "api-extractor run --local",
+    "test": "NX_TUI=false nx run-many --target=test:unit,test:types --projects=@pattern-compare/core --output-style=stream",
+    "test:types": "cd type-tests && tsd --files '**/*.test-d.ts'",
+    "test:unit": "vitest run"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "types": "./dist/core-public.d.ts"
+}

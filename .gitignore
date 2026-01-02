@@ -145,3 +145,18 @@ tmp
 !tmp/.gitkeep
 **/tmp
 !**/tmp/.gitkeep
+scratch
+**/scratch
+
+# Nx
+.nx
+temp
+**/temp
+!**/temp/.gitkeep
+
+# API Extractor intermediate files
+packages/*/api-report/**/*.api.json
+
+# Nx graph visualization
+graph.html
+static/

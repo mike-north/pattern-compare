@@ -1,0 +1,23 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "ignoreDependencies": ["@commitlint/cli", "@nx/js", "@nx/vite", "@nx/vitest", "lint-staged"],
+  "ignore": ["**/vitest.config.*", "**/test/setup.ts", "**/test-fixtures/**", "**/type-tests/**"],
+  "workspaces": {
+    ".": {
+      "entry": ["eslint.config.js"]
+    },
+    "packages/*": {
+      "entry": [
+        "src/index.ts",
+        "src/**/*.test.ts",
+        "test/**/*.{test,spec}.ts",
+        "test/**/*.test-d.ts",
+        "type-tests/**/*.test-d.ts"
+      ],
+      "paths": {
+        "@": ["./src/index.ts"],
+        "@/*": ["./src/*"]
+      }
+    }
+  }
+}
