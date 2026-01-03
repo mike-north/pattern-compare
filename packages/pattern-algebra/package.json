@@ -1,7 +1,7 @@
 {
   "name": "pattern-algebra",
   "description": "TypeScript library for path pattern algebra - parsing, matching, and set operations on glob patterns",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Mike North <michael.north@gmail.com>",
   "dependencies": {
     "@pattern-algebra/core": "workspace:*"
