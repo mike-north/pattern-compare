@@ -78,6 +78,16 @@ importers:
         specifier: ^1.0.4
         version: 1.6.1(@types/node@25.0.3)
 
+  packages/pattern-algebra:
+    dependencies:
+      '@pattern-algebra/core':
+        specifier: workspace:*
+        version: link:../core
+    devDependencies:
+      typescript:
+        specifier: 5.8.2
+        version: 5.8.2
+
 packages:
 
   '@babel/code-frame@7.27.1':
