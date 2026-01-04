@@ -6,6 +6,7 @@
   "devDependencies": {
     "eslint": "^9.39.2",
     "tsd": "~0.33.0",
+    "tsx": "^4.19.2",
     "typescript": "5.8.2",
     "vitest": "^1.0.4"
   },
@@ -30,6 +31,9 @@
     "directory": "packages/core"
   },
   "scripts": {
+    "bench": "tsx benchmarks/run-all.ts",
+    "bench:file": "vitest bench --config vitest.bench.config.ts --run",
+    "bench:watch": "vitest bench --config vitest.bench.config.ts",
     "build": "tsc -b",
     "build:tsc": "tsc -b",
     "check": "pnpm check:lint-ts && pnpm check:typecheck && pnpm check:api-report",
