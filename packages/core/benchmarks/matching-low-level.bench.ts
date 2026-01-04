@@ -31,11 +31,16 @@ describe('Matching: matchSegment()', () => {
   const literalSegment = literalPattern?.root?.type === 'sequence' ? literalPattern.root.segments[0] : undefined
   const wildcardSegment = wildcardPattern?.root?.type === 'sequence' ? wildcardPattern.root.segments[0] : undefined
 
-  bench('literal segment match', () => {
-    if (literalSegment) matchSegment('src', literalSegment)
-  })
+  // Move conditionals outside bench calls to avoid per-iteration overhead
+  if (literalSegment) {
+    bench('literal segment match', () => {
+      matchSegment('src', literalSegment)
+    })
+  }
 
-  bench('wildcard segment match', () => {
-    if (wildcardSegment) matchSegment('src', wildcardSegment)
-  })
+  if (wildcardSegment) {
+    bench('wildcard segment match', () => {
+      matchSegment('src', wildcardSegment)
+    })
+  }
 })

@@ -6,8 +6,8 @@
  * from memory accumulation across benchmark files.
  *
  * Usage:
- *   pnpm bench           - Run all benchmarks
- *   pnpm bench:watch     - Not supported with orchestrator
+ *   pnpm bench           - Run all benchmarks via this orchestrator
+ *   pnpm bench:watch     - Runs benchmarks directly with Vitest (no orchestrator)
  */
 import { spawn } from 'child_process'
 import { readdirSync } from 'fs'

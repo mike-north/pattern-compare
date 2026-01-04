@@ -136,7 +136,7 @@ pnpm bench 2>&1 | tee benchmark-results-$(date +%Y%m%d).txt
 ## Adding New Benchmarks
 
 1. Create a new `.bench.ts` file in the `benchmarks/` directory, or add to an existing file
-2. Keep files small (3-6 bench calls per file) to avoid memory issues
+2. Keep individual benchmark groups small (roughly 3-6 `bench` calls per `describe` block) to avoid memory issues; larger aggregate files are fine when run via the orchestrator
 3. Use descriptive names that indicate what's being measured
 4. Include complexity variants (simple, moderate, complex, pathological)
 5. Consider using shared patterns from `_setup.ts` for consistency
