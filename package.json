@@ -26,6 +26,7 @@
   "packageManager": "pnpm@10.26.1",
   "private": true,
   "scripts": {
+    "bench": "NX_TUI=false nx run-many --target=bench --exclude=pattern-algebra",
     "build": "NX_TUI=false nx run-many --target=build --exclude=pattern-algebra",
     "changeset": "changeset",
     "check": "NX_TUI=false nx check",

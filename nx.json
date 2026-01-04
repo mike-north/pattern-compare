@@ -2,6 +2,11 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "_cacheVersion": "2026-01-02-initial",
   "targetDefaults": {
+    "bench": {
+      "dependsOn": ["build"],
+      "cache": false,
+      "inputs": ["default", "^production", "{projectRoot}/benchmarks/**/*", "{projectRoot}/vitest.bench.config.ts"]
+    },
     "build": {
       "dependsOn": ["^build", "^generate:api-report"],
       "cache": true,
@@ -77,10 +82,13 @@
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/**/*.bench.ts",
       "!{projectRoot}/tsconfig.spec.json",
       "!{projectRoot}/test/**/*",
       "!{projectRoot}/type-tests/**/*",
-      "!{projectRoot}/vitest.config.ts"
+      "!{projectRoot}/benchmarks/**/*",
+      "!{projectRoot}/vitest.config.ts",
+      "!{projectRoot}/vitest.bench.config.ts"
     ],
     "sharedGlobals": ["{workspaceRoot}/tsconfig.json", "{workspaceRoot}/pnpm-lock.yaml"]
   }

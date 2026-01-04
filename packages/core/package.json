@@ -30,6 +30,9 @@
     "directory": "packages/core"
   },
   "scripts": {
+    "bench": "npx tsx benchmarks/run-all.ts",
+    "bench:file": "vitest bench --config vitest.bench.config.ts --run",
+    "bench:watch": "vitest bench --config vitest.bench.config.ts",
     "build": "tsc -b",
     "build:tsc": "tsc -b",
     "check": "pnpm check:lint-ts && pnpm check:typecheck && pnpm check:api-report",
